@@ -1,4 +1,4 @@
-const request = require('supertest');
+import request from 'supertest';
 
 const obterToken = async (usuario, senha) =>{
     const respostaLogin = await request (process.env.BASE_URL) 
@@ -9,10 +9,10 @@ const obterToken = async (usuario, senha) =>{
                         'senha': senha
                 })
                 
-                return = respostaLogin.body.token
+                return respostaLogin.body.token
 
 }
 
-module.exports = {
+export {
     obterToken
 }
